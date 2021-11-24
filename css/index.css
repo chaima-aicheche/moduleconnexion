@@ -1,0 +1,56 @@
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.reg{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+#titre_con{
+    display: flex;
+    justify-content: center;
+}
+
+#text-img{  
+    margin-top: -4%;
+    text-align: center;
+    font-size: large;
+    
+}
+
+footer{
+    display: flex;
+    justify-content: flex-end;
+}
+#mainWrapper
+{
+    width:30%;
+    
+    margin:auto;
+    margin-top:5%;
+    
+    padding:3%;
+    
+    animation-name:form-scale;
+    animation-fill-mode:forwards;
+    animation-duration:3s;
+}
+
+@keyframes form-scale {
+    from 
+    
+    {	margin-top:5%;
+        background-color:sienna;
+        max-height:35%;
+    }
+    to
+    {
+        margin-top:8%;
+        background-color:peru;
+        max-height:35%;
+    }
+}

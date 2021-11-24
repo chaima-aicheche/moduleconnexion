@@ -1,1 +1,1 @@
-moduleconnexion
+module-connexion
