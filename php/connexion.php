@@ -5,7 +5,7 @@
 		$password = $_POST['password'];
 
 		// Connexion à la base de données MySQL 
-        $conn = mysqli_connect("localhost","chaima","","moduleconnexion");
+        $conn = mysqli_connect("localhost","root","root","moduleconnexion");
 
 		// Vérifier la connexion
 		if($conn === false){
@@ -22,10 +22,15 @@ if (isset($_POST['login'],$_POST['password'])){
   $rows = mysqli_num_rows($result);
   if($rows==1){
       $_SESSION['login'] = $login;
+
+	  $_SESSION ["id"] = $res [0][0];
       header("Location: ../index.php");
+
+
   }else{
     $message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
   }
+
 }
 ?>
 

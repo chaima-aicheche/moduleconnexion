@@ -45,7 +45,7 @@
     <!-- Main -->     
     <main>
     
-        <h2 id="titre_con"> INSCRIVEZ VOUS OU CONNECTEZ VOUS ! </h2>
+        <h2 id="titre_con"> Les meilleures promo que pour VOUS ! </h2>
         
     </main>
 
@@ -53,6 +53,6 @@
     <!-- Footer -->
     <footer>
     
-    <a href="https://github.com/chaima-aicheche/module-connexion"> <img alt="Qries" src="image/logo.png" width="150" height="70"></a>
+    <a href="https://github.com/chaima-aicheche/moduleconnexion"> <img alt="Qries" src="image/logo.png" width="150" height="70"></a>
     </footer>
 </body>
