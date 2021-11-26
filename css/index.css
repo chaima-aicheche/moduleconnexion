@@ -1,6 +1,8 @@
+
 header{
     display: flex;
     justify-content: space-between;
+    
 }
 
 .reg{
@@ -18,8 +20,7 @@ header{
 #text-img{  
     margin-top: -4%;
     text-align: center;
-    font-size: large;
-    
+    font-size: large;  
 }
 
 footer{
@@ -54,3 +55,5 @@ footer{
         max-height:35%;
     }
 }
+
+
