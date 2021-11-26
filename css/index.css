@@ -2,12 +2,12 @@
 header{
     display: flex;
     justify-content: space-between;
-    
 }
 
 .reg{
     display: flex;
     justify-content: flex-end;
+
 }
 
 
@@ -26,6 +26,7 @@ header{
 footer{
     display: flex;
     justify-content: flex-end;
+    background-color: sienna;
 }
 #mainWrapper
 {
@@ -55,5 +56,11 @@ footer{
         max-height:35%;
     }
 }
+
+
+
+
+
+
 
 

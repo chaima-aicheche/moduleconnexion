@@ -3,7 +3,7 @@
 				session_start();
 				if(!isset($_SESSION["login"]))
 				{
-					echo '<div class=reg> <a id="connexionLink"  href="php/connexion.php">Login</a>
+					echo '<div class=reg> <a id="connexionLink"  href="php/connexion.php">Login</a> 
 						  <a id="inscriptionLink" href="php/inscription.php">Registration</a> </div>';				
 				}
 				else
@@ -33,6 +33,7 @@
 	</head>
  <!-- Body -->
 <body>
+
     <!-- Header -->
     <header>
     

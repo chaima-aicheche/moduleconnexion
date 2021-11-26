@@ -3,8 +3,8 @@ session_start();
 	
 	$bdd = mysqli_connect("localhost","root","root","moduleconnexion");
 	$sesslogin = $_SESSION["login"];
-	$req= mysqli_query($bdd, "SELECT * FROM utilisateurs WHERE login = $sesslogin");
-	$res= mysqli_fetch_all($req);
+	$req= mysqli_query($bdd, "SELECT * FROM utilisateurs WHERE login = '$sesslogin'");
+	$res= mysqli_fetch_all($req,MYSQLI_ASSOC);
 	$login = $res[0]['login'];
 	$prenom = $res[0]['prenom'];
 	$nom = $res[0]['nom'];
@@ -20,7 +20,7 @@ if (isset($_POST['submitBtn']))
     $login10 = $_POST['login'];
 	$requete = "UPDATE utilisateurs SET login='$login10', prenom='$prenom10', nom='$nom10', password= '".hash('sha256', $password)."' WHERE  login = '$sesslogin' ";
     
-	var_dump($requete);
+
 	$req2= mysqli_query($bdd, $requete);
 	// var_dump($bdd);
 	// header("Location: profil.php");
@@ -44,20 +44,21 @@ if (isset($_POST['submitBtn']))
 					<p id="discovered">Profil <?php echo $_SESSION["login"]; ?></p>
 		
 			<form method="post" action="#">
+		
 
 				<div>
 					<label for="login">Login</label>
-					<input type="text" name="login" <?php echo $login?> required/>
+					<input type="text" name="login" value="<?php echo $login?>" placeholder="admin"  required/>
 				</div>
 				
 				<div>
 					<label for="prenom">Nom</label>
-					<input type="text" name="prenom"<?php echo $nom ?> required/>
+					<input type="text" name="prenom"  value='<?php echo $nom ?> 'required/>
 				</div>
 
 				<div>
 					<label for="nom">Prénom</label>
-					<input type="text" name="nom"<?php echo $prenom ?> required/>
+					<input type="text" name="nom"  value='<?php echo $prenom ?> 'required/>
 				</div>
 								
 				<div id="password">
