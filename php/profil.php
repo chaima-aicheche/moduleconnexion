@@ -18,7 +18,7 @@ if (isset($_POST['submitBtn']))
     $prenom10 = $_POST['prenom'];
     $password10 = $_POST['password'];
     $login10 = $_POST['login'];
-	$requete = "UPDATE utilisateurs SET login='$login10', prenom='$prenom10', nom='$nom10', password= '".hash('sha256', $password)."' WHERE  login = '$sesslogin' ";
+	$requete = "UPDATE utilisateurs SET login='$login10', prenom='$prenom10', nom='$nom10', password= '".hash('sha256', $password10)."' WHERE  login = '$sesslogin' ";
     
 
 	$req2= mysqli_query($bdd, $requete);
