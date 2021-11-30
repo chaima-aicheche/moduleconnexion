@@ -10,20 +10,23 @@ session_start();
 	$nom = $res[0]['nom'];
 	$password = $res[0]['password']; 
 
-
+	
 
 if (isset($_POST['submitBtn']))
 {
     $nom10 = $_POST['nom'];
     $prenom10 = $_POST['prenom'];
-    $password10 = $_POST['password'];
+	$lastpass =  $_POST['password'];
+    $password10 = $_POST['passwordChange'];
     $login10 = $_POST['login'];
-	$requete = "UPDATE utilisateurs SET login='$login10', prenom='$prenom10', nom='$nom10', password= '".hash('sha256', $password10)."' WHERE  login = '$sesslogin' ";
-    
+		$requete = "UPDATE utilisateurs SET login='$login10', prenom='$prenom10', nom='$nom10', password= '".hash('sha256', $password10)."' WHERE  login = '$sesslogin' and password='".hash('sha256', $lastpass)."'";
+		echo var_dump($requete);
+		$req2= mysqli_query($bdd, $requete) or die(mysql_error()) ;
+		$rows = mysqli_num_rows($req2);
+		// var_dump($bdd);
+		if($rows == 1){header("Location: ../index.php");}
+		else{echo 'mauvais';header("Location: profil.php");}
 
-	$req2= mysqli_query($bdd, $requete);
-	// var_dump($bdd);
-	// header("Location: profil.php");
 }
 
 ?>
@@ -42,13 +45,12 @@ if (isset($_POST['submitBtn']))
 				<div>
 					<a href="index.php" id="title"></a>
 					<p id="discovered">Profil <?php echo $_SESSION["login"]; ?></p>
-		
 			<form method="post" action="#">
 		
 
 				<div>
 					<label for="login">Login</label>
-					<input type="text" name="login" value="<?php echo $login?>" placeholder="admin"  required/>
+					<input type="text" name="login" value="<?php echo $login?>"  required/>
 				</div>
 				
 				<div>
@@ -62,7 +64,7 @@ if (isset($_POST['submitBtn']))
 				</div>
 								
 				<div id="password">
-					<label for="password">Password</label>
+					<label for="password">Last Password</label>
 					<input type="password" name="password" required/>
 				</div>
 				
